@@ -5,7 +5,7 @@ import { IoMdDownload } from "react-icons/io";
 const AboutMe = () => {
     // Add the shareable link to your Google Drive PDF file
     const resumePdfUrl =
-        "https://drive.google.com/file/d/1aJEciCkCdgzWxC9JcYcU72eLaF1eU2Ec/view?usp=sharing";
+        "https://drive.google.com/file/d/1VTRwS4xelOUNfFgzBIWKcBthvr-4Ehck/view?usp=sharing";
 
     const handleDownloadResume = () => {
         const link = document.createElement("a");
