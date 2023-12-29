@@ -1,0 +1,39 @@
+[
+    {
+      "id": "1",
+      "img": "https://i.ibb.co/zf0swLm/resturent-slider-img.jpg",
+      "name": "Bistru Restaurant",
+      "liveLink": "https://bistru-boss-resturent.web.app/",
+      "frontendCode": "https://github.com/nasimuk47/bestru-client-project",
+      "backendCode": "https://github.com/nasimuk47/Bistru-boss-server-side",
+      "description": "A modern restaurant website offering an exquisite dining experience. Explore the menu, book a table, and enjoy the ambience."
+    },
+    {
+      "id": "2",
+      "img": "https://i.ibb.co/NyP9J4D/tour-guide-slider.jpg",
+      "name": "Tour Guide",
+      "liveLink": "https://tour-guide-c5115.web.app/",
+      "frontendCode": "https://github.com/nasimuk47/toure-guide-client-side?tab=readme-ov-file",
+      "backendCode": "https://github.com/nasimuk47/tour-gide-server-side",
+      "description": "Your go-to platform for planning unforgettable tours. Discover exciting destinations, create itineraries, and embark on memorable journeys."
+    },
+    {
+      "id": "3",
+      "img": "https://i.ibb.co/dDSwZy0/clothlop-slider-img.jpg",
+      "name": "ClothLoop Fashion",
+      "liveLink": "https://clothloop-auth.web.app/",
+      "frontendCode": "https://github.com/nasimuk47/clothloop-client-side",
+      "backendCode": "https://github.com/nasimuk47/clothloop-server-side",
+      "description": "Stay in style with ClothLoop Fashion. Shop the latest trends, personalize your wardrobe, and express your unique fashion sense."
+    },
+    {
+      "id": "4",
+      "img": "https://i.ibb.co/FbG3FZy/car-doctor-website.jpg",
+      "name": "Zomo Automotive",
+      "liveLink": "https://drivezen-assignment.web.app/",
+      "frontendCode": "https://github.com/nasimuk47/Automotive-client-side",
+      "backendCode": "https://github.com/nasimuk47/Automotive-server--side",
+      "description": "Drivezen's Automotive Hub for car enthusiasts. Explore cutting-edge vehicles, stay informed on industry trends, and immerse yourself in the world of automotive excellence."
+    }
+  ]
+  
