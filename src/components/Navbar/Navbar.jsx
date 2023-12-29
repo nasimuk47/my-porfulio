@@ -1,23 +1,11 @@
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-    const navOptions = (
-        <>
-            <li className="active:btn text-white text-lg   tpy-2 px-3">
-                <Link to="/"> Home</Link>
-            </li>
-            <li className="active:btn text-white text-lg   tpy-2 px-3">
-                <Link to="/about"> about</Link>
-            </li>
-            <li className="active:btn text-white white text-lg   tpy-2 px-3">
-                <Link to="contact"> contact</Link>
-            </li>
-        </>
-    );
+    const navOptions = <></>;
 
     return (
         <>
-            <div className="navbar fixed z-10 bg-opacity-30 max-w-screen-xl bg-blue-500 flex justify-between text-white">
+            <div className="navbar  z-10 bg-opacity-30 max-w-screen-xl bg-blue-500 flex justify-between text-white">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -37,13 +25,13 @@ const Navbar = () => {
                         </label>
                         <ul
                             tabIndex={0}
-                            className="menu menu-compact dropdown-content mt-3 p-2 shadow z-40 bg-white rounded-box w-52">
+                            className="menu menu-compact dropdown-content mt-3 p-2 shadow z-40 bg-black rounded-box w-52">
                             {navOptions}
                         </ul>
                     </div>
                     <Link to="/">
                         <a className="btn btn-ghost text-white normal-case text-3xl ">
-                            Portfulio
+                            Nasim khan
                         </a>
                     </Link>
                 </div>

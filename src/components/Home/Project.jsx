@@ -1,60 +1,91 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React, { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/free-mode";
 
-import slide1 from "../../assets/bistruboss-resturent.png";
-import slide2 from "../../assets/tourguide.png";
-import slide3 from "../../assets/clothlopp.png";
-import slide4 from "../../assets/automotive.png";
-import slide5 from "../../assets/dragon.png";
-import slide6 from "../../assets/summersale.png";
+// Import Swiper styles
+import "swiper/css/free-mode";
+
+// import required modules
+import { FreeMode } from "swiper/modules";
 
 const Project = () => {
-    const [currentSlide, setCurrentSlide] = useState(0);
+    const [projectsData, setProjectsData] = useState([]);
 
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        initialSlide: currentSlide,
-        autoplay: true,
-        autoplaySpeed: 1500,
-        beforeChange: (oldIndex, newIndex) => {
-            setCurrentSlide(newIndex);
-        },
-    };
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch("../../../public/projects.json");
+                const data = await response.json();
+                setProjectsData(data);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
 
-    const imageStyle = {
-        margin: "auto",
-        display: "block",
-        width: "90%",
-        height: "auto",
-        maxHeight: "600px",
-    };
+        fetchData();
+    }, []);
 
     return (
-        <section className="text-center ">
-            <h1 className="text-3xl font-bold text-blue-500 mt-24">Projects</h1>
-            <div className="divider divider-info w-[150px] mx-auto"></div>
+        <div className="mt-10">
+            <h1 className="text-3xl font-bold text-blue-500 text-center mt-8">
+                Awesome projects
+            </h1>
+            <div className="divider divider-info w-[250px] mx-auto"></div>
 
-            <Slider {...settings}>
-                {[slide5, slide4, slide3, slide2, slide1, slide6].map(
-                    (slide, index) => (
-                        <div key={index}>
-                            <img
-                                src={slide}
-                                alt={`Slide ${index + 1}`}
-                                style={imageStyle}
-                            />
+            <Swiper
+                modules={[FreeMode]}
+                freeMode={true}
+                slidesPerView={3}
+                spaceBetween={30}
+                className="mySwiper">
+                {projectsData.map((project) => (
+                    <SwiperSlide key={project.id}>
+                        <div className="w-[370px] bg-base-100 shadow-xl h-[500px]">
+                            <figure className="w-full h-[200px]">
+                                <img
+                                    className="w-full h-full object-cover"
+                                    src={project.img}
+                                    alt={project.name}
+                                />
+                            </figure>
+                            <div className="card-body">
+                                <h2 className="card-title">{project.name}</h2>
+
+                                <p className="h-[110px] mt-5">
+                                    {project.description}
+                                </p>
+
+                                <div className="flex gap-2 mt-3">
+                                    <a
+                                        href={project.liveLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="btn btn-sm hover:bg-fuchsia-500">
+                                        Live Link
+                                    </a>
+                                    <a
+                                        href={project.frontendCode}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="btn btn-sm hover:bg-pink-500">
+                                        Frontend Code
+                                    </a>
+                                    <a
+                                        href={project.backendCode}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="btn btn-sm hover:bg-blue-500">
+                                        Backend Code
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                    )
-                )}
-            </Slider>
-        </section>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        </div>
     );
 };
 

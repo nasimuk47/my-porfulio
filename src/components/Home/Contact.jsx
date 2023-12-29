@@ -1,12 +1,11 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from "react";
-import { IoIosMail } from "react-icons/io";
 import { FaArrowRight } from "react-icons/fa";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
-import Footer from "./Footer";
+import contactimg from "../../assets/contact-img.avif";
 const Contact = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -44,68 +43,79 @@ const Contact = () => {
     };
 
     return (
-        <div className="mt-16 w-[80%] mx-auto">
-            <div className="flex justify-between items-center">
-                <h1 className="text-5xl text-blue-500 font-bold mt-10">
-                    Contact Me.
-                </h1>
-                <h1 className="text-5xl text-black font-bold mt-5">
-                    <IoIosMail className="text-blue-500" />
-                </h1>
-            </div>
-            <hr />
+        <div className="mt-16 w-full px-4 sm:px-6 lg:px-8">
+            <h1 className="text-3xl font-bold text-blue-500 text-center mt-8">
+                Contact Me
+            </h1>
+            <div className="divider divider-info w-[190px] mx-auto"></div>
 
-            <div className="bg-gray-600 h-[390px] rounded-lg mt-10 mb-10">
-                <h1 className="text-3xl text-white mt-10 font-bold text-center ">
-                    LET'S TALK
-                </h1>
-
-                <div className="flex gap-7 justify-center w-[60%] mx-auto">
-                    <div className="w-[50%]">
-                        <div className="label">
-                            <span className="label-text text-white">NAME</span>
-                        </div>
-                        <input
-                            type="text"
-                            placeholder="name here"
-                            className="input input-bordered w-full"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                        />
-                    </div>
-                    <div className="w-[50%]">
-                        <div className="label">
-                            <span className="label-text text-white">GMAIL</span>
-                        </div>
-                        <input
-                            type="text"
-                            placeholder="gmail here"
-                            className="input input-bordered w-full"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                    </div>
-                </div>
-                <div className="text-center w-[60%] mx-auto mt-10">
-                    <div className="label">
-                        <span className="label-text text-white">
-                            How can I help You ?
-                        </span>
-                    </div>
-                    <textarea
-                        placeholder="How can I Help you ?"
-                        className="textarea textarea-bordered textarea-sm w-full"
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}></textarea>
+            <div className="flex items-center flex-col sm:flex-row gap-6 mt-8">
+                <div className="sm:w-1/2">
+                    <img
+                        src={contactimg}
+                        alt="Contact"
+                        className="w-full h-auto rounded-lg"
+                    />
                 </div>
 
-                <button
-                    onClick={handleSendMessage}
-                    className="btn btn-outline border-white text-white flex justify-center w-[20%] mx-auto mt-5 mb-5">
-                    Send Message <FaArrowRight />
-                </button>
+                <div className="sm:w-1/2 mt-6 sm:mt-2">
+                    <h1 className="text-3xl text-blue-900 font-bold text-center mb-4">
+                        LET'S TALK
+                    </h1>
+
+                    <div className="flex flex-col sm:flex-row gap-4 sm:w-[60%] mx-auto">
+                        <div className="w-full sm:w-1/2">
+                            <label className="label">
+                                <span className="label-text text-white">
+                                    NAME
+                                </span>
+                            </label>
+                            <input
+                                type="text"
+                                placeholder="Name"
+                                className="input input-bordered w-full"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                            />
+                        </div>
+                        <div className="w-full sm:w-1/2">
+                            <label className="label">
+                                <span className="label-text text-white">
+                                    GMAIL
+                                </span>
+                            </label>
+                            <input
+                                type="text"
+                                placeholder="Email"
+                                className="input input-bordered w-full"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="text-center mt-3 sm:w-[60%] mx-auto">
+                        <label className="label">
+                            <span className="label-text text-white">
+                                How can I help You ?
+                            </span>
+                        </label>
+                        <textarea
+                            placeholder="How can I Help you ?"
+                            className="textarea textarea-bordered w-full"
+                            value={message}
+                            onChange={(e) =>
+                                setMessage(e.target.value)
+                            }></textarea>
+                    </div>
+
+                    <button
+                        onClick={handleSendMessage}
+                        className="btn border border-white text-blue-500 w-full sm:w-[40%] mx-auto mt-5 flex justify-center">
+                        Send Message <FaArrowRight />
+                    </button>
+                </div>
             </div>
-            <Footer></Footer>
         </div>
     );
 };

@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { LuContact } from "react-icons/lu";
 import { IoMdDownload } from "react-icons/io";
-import Services from "./Services";
 
 const AboutMe = () => {
     // Add the shareable link to your Google Drive PDF file
@@ -21,11 +20,11 @@ const AboutMe = () => {
 
     return (
         <div>
-            <div className="flex justify-between">
-                <h1 className="text-5xl text-blue-500 font-bold mt-10">
+            <div className="flex justify-between items-center">
+                <h1 className="text-3xl text-blue-500 font-bold mt-10">
                     About Me.
                 </h1>
-                <h1 className="text-5xl text-black font-bold mt-5">
+                <h1 className="text-3xl text-black font-bold mt-5">
                     <LuContact className="text-blue-500" />
                 </h1>
             </div>
@@ -33,11 +32,11 @@ const AboutMe = () => {
 
             <div className="lg:flex">
                 <div className="lg:w-[60%] sm:w-full">
-                    <h1 className="text-3xl font-bold">
+                    <h1 className="text-2xl font-bold">
                         UI/UX Designer & Developer
                     </h1>
 
-                    <p className="mt-3 text-xl font-semibold text-gray-700">
+                    <p className="mt-3  font-semibold text-gray-700">
                         Hi, I'm Nasim, a passionate UI/UX Designer & Developer.
                         My journey in the digital realm revolves around creating
                         exceptional user experiences that seamlessly blend form
@@ -58,24 +57,24 @@ const AboutMe = () => {
 
                 <div className="lg:w-[40%] sm:w-full space-y-2 mt-6 lg:ml-10 sm:ml-0">
                     <p className="text-2xl font-bold">Personal Information</p>
-                    <h1 className="text-xl font-semibold">Name : Nasim Khan</h1>
-                    <h1 className="text-xl font-semibold">Age : 16 Years</h1>
-                    <h1 className="text-xl font-semibold">
+                    <h1 className="text-lg font-semibold">Name : Nasim Khan</h1>
+                    <h1 className="text-lg font-semibold">Age : 16 Years</h1>
+                    <h1 className="text-lg font-semibold">
                         Education level : Secondary
                     </h1>
-                    <h1 className="text-xl font-semibold">
+                    <h1 className="text-lg font-semibold">
                         Institution Name : Mymensingh polytechnic institutes
                     </h1>
-                    <h1 className="text-xl font-semibold">
+                    <h1 className="text-lg font-semibold">
                         Residence : Netrokona, Bangladesh
                     </h1>
-                    <h1 className="text-xl font-semibold">
+                    <h1 className="text-lg font-semibold">
                         Address : 2410 purbadhala, Netrokona
                     </h1>
-                    <h1 className="text-xl font-semibold">
+                    <h1 className="text-lg font-semibold">
                         Email : nasim.uk47@gmail.com
                     </h1>
-                    <h1 className="text-xl font-semibold">
+                    <h1 className="text-lg font-semibold">
                         Phone : +01854763654
                     </h1>
                     <h2 className="mt-5 ml-2">
@@ -87,7 +86,6 @@ const AboutMe = () => {
                     </h2>
                 </div>
             </div>
-            <Services></Services>
         </div>
     );
 };
